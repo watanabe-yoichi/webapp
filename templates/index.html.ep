@@ -1,0 +1,29 @@
+<%
+  my $hoge = stash('old_hoge');
+  my $hoge2 = stash('new_hoge');
+  my $name = stash('name');
+  my $age  = stash('age');
+  my $nums = stash('nums');
+%>
+<html>
+  <head>
+    <title>Index</title>
+  </head>
+  <body>
+    <h1>Index</h1>
+    % if ($name eq 'kimoto') {
+      Kimoto
+    % } else {
+      Other
+    % }
+    <br>
+    He is <%= $age %> years old.<br>
+
+    % for my $num (@{ $nums }) {
+      <%= $num %><br>
+    % }
+
+    <%= $hoge %>
+    <%= $hoge2 %>
+  </body>
+</html>;
